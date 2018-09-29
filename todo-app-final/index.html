@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <h1>Todo activity list</h1>
+    <label for="todoName">Todo:</label>
+    <input type="text" id="todoName" placeholder="type a name to filter" autocomplete="off">
+    <button id="addButton">Add</button>
+    <button id="clearButton">Clear</button>
+    <label for="sortSelect">Sort Criteria:</label>
+    <select id="sortSelect">
+        <option value="BY_DATE_ADDED" selected>By Date Added</option>
+        <option value="BY_DATE_UPDATED">By Date Updated</option>
+        <option value="ALPHABETICALLY">Alphabetically</option>
+    </select>
+    <div id="summary"></div>
+    <div id="todoList">
+    </div>
+
+    <script src="js/objects.js" type="text/javascript"></script>
+    <script src="js/functions.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+</body>
+
+</html>

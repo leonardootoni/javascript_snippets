@@ -1,0 +1,23 @@
+//Unix Epoch - Jan 1st 1970 00:00:00
+
+const now = new Date();
+const timestamp = now.getTime();
+
+const myDate = new Date(timestamp);
+console.log(myDate.getFullYear());
+
+const date1 = new Date("July 13 2017");
+const tstmpDate1 = date1.getTime();
+
+const date2 = new Date("December 28 2017");
+const tstmpDate2 = date2.getTime();
+
+const biggerDate = tstmpDate1 < tstmpDate2 ? tstmpDate1 : tstmpDate2;
+console.log(`The bigger date is ${new Date(biggerDate).toDateString()}`);
+
+// console.log(`Year: ${now.getFullYear()}`);
+// console.log(`Month: ${now.getMonth()}`);
+// console.log(`Day: ${now.getDate()}`);
+// console.log(`Hour: ${now.getHours()}`);
+// console.log(`Minutes: ${now.getMinutes()}`);
+// console.log(`Seconds: ${now.getSeconds()}`);

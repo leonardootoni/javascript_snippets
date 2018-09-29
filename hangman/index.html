@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="formWordToGuess"></h1>
+    <div>
+        <label for="inputLetter">Type a letter:
+        </label>
+        <input type="text" id="formLetter" maxlength="1" size="5">
+        <button id="submitBtn">Submit</button>
+        <label for="attempts">Remaing attempts:</label>
+        <input type="text" id="formRemainingAttempts" size="5" readonly="true">
+    </div>
+    <div>
+        <h1 id="gameover"></h1>
+    </div>
+    <h2 id="guessesNumber"></h2>
+    <script src="requests.js"></script>
+    <script src="hangman.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
