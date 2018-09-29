@@ -1,3 +1,3 @@
 # javascript_snippets
 
-Repository to store Vanila, ES6 code.
+Repository to store Vanilla, ES6 code.
