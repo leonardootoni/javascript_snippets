@@ -70,25 +70,32 @@ const isValidInput = letter => {
 // request.send();
 
 //Requesting country information
-getPuzzle().then(
-  puzzle => {
-    console.log(puzzle);
-  },
-  error => {
+getPuzzle()
+  .then(data => {
+    const countryCode = "US";
+    const countryList = data.filter(country => country.alpha2Code === countryCode);
+    if (countryList.length < 1) {
+      throw new Error("Country was not found.");
+    } else {
+      return countryList[0];
+    }
+  })
+  .then(country => {
+    console.log(country);
+  })
+  .catch(error => {
     console.log(error);
-  }
-);
+  });
 
-getPuzzleByCountryCode("CA").then(
-  //resolve method from promise
-  puzzle => {
+getPuzzleByCountryCode("CA")
+  .then(puzzle => {
+    //resolve method from promise
+    console.log("Retrived by fetch api");
     console.log(puzzle);
-  },
-  //reject method from promise
-  error => {
-    console.log(error);
-  }
-);
+  })
+  .catch(err => {
+    console.log(err);
+  });
 
 // const func = callback => {
 //   callback("hahaha", 1);
@@ -98,17 +105,18 @@ getPuzzleByCountryCode("CA").then(
 //   console.log(response + num);
 // });
 
-fetch("http://puzzle.mead.io/puzzle?wordCount=3", {})
-  .then(response => {
-    if (response.status === 200) {
-      return response.json();
-    } else {
-      throw new Error("Unable to fetch puzzle");
-    }
-  })
-  .then(data => {
-    console.log("using fetch api... [" + data.puzzle + "]");
-  })
-  .catch(error => {
-    console.log(error);
-  });
+//>>>Boiler plate to use the fetch API
+// fetch("http://puzzle.mead.io/puzzle?wordCount=3", {})
+//   .then(response => {
+//     if (response.status === 200) {
+//       return response.json();
+//     } else {
+//       throw new Error("Unable to fetch puzzle");
+//     }
+//   })
+//   .then(data => {
+//     console.log("using fetch api... [" + data.puzzle + "]");
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });
