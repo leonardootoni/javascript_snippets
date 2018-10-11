@@ -70,16 +70,7 @@ const isValidInput = letter => {
 // request.send();
 
 //Requesting country information
-getPuzzle()
-  .then(data => {
-    const countryCode = "US";
-    const countryList = data.filter(country => country.alpha2Code === countryCode);
-    if (countryList.length < 1) {
-      throw new Error("Country was not found.");
-    } else {
-      return countryList[0];
-    }
-  })
+getPuzzle("BR")
   .then(country => {
     console.log(country);
   })
@@ -88,10 +79,10 @@ getPuzzle()
   });
 
 getPuzzleByCountryCode("CA")
-  .then(puzzle => {
+  .then(country => {
     //resolve method from promise
-    console.log("Retrived by fetch api");
-    console.log(puzzle);
+    console.log("Retrived by fetch api using async / wait:");
+    console.log(country);
   })
   .catch(err => {
     console.log(err);
@@ -116,6 +107,45 @@ getPuzzleByCountryCode("CA")
 //   })
 //   .then(data => {
 //     console.log("using fetch api... [" + data.puzzle + "]");
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });
+
+// getLocation()
+//   .then(location => {
+//     console.log(location);
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });
+
+// getLocation()
+//   .then(data => {
+//     //the promise was solved previously, so the response data is available to print
+//     console.log(
+//       `Data recovered using fetch API" [city: ${data.city} region: ${data.region} country: ${
+//         data.country
+//       }]`
+//     );
+//     //it is going to invoke the function to get country details by code
+//     //It's using promise chaining
+//     return getPuzzleByCountryCode(data.country);
+//   })
+//   .then(country => {
+//     console.log(`The country native name is: ${country.nativeName}`);
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });
+
+// getCurrentCountry()
+//   .then(country => {
+//     console.log(
+//       `Data recovered using fetch API" [code: ${country.alpha2Code} capital: ${
+//         country.capital
+//       } country: ${country.name}]`
+//     );
 //   })
 //   .catch(error => {
 //     console.log(error);
