@@ -11,6 +11,7 @@ const formWord = document.getElementById("formWordToGuess");
 const formLetter = document.getElementById("formLetter");
 const formRemainingAttempts = document.getElementById("formRemainingAttempts");
 const submitBtn = document.getElementById("submitBtn");
+const resetBtn = document.getElementById("resetBtn");
 
 const startPage = countryName => {
   hang1 = new Hangman(countryName, 4);
@@ -33,6 +34,10 @@ submitBtn.addEventListener("click", () => {
 
   formLetter.value = "";
   formLetter.focus();
+});
+
+resetBtn.addEventListener("click", () => {
+  
 });
 
 const processGuess = letter => {

@@ -133,6 +133,7 @@ const displayTodos = function(list) {
     div.appendChild(checkBox);
     div.appendChild(anchor);
     div.appendChild(removeButton);
+    div.classList.add("list-item")
     divList.appendChild(div);
   });
 };
@@ -149,6 +150,7 @@ const displayUpdatedSummary = function(todoLengthList) {
 
   let d = document.querySelector("#summary");
   d.innerHTML = "";
+  d.classList.add("empty-message");
   d.appendChild(spanSummary);
 };
 

@@ -6,35 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <form id="edit-form" class="form">
-        <label for="name">Todo:</label>
-        <input type="text" id="name" autocomplete="off">
-        <label for="notes">Description:</label>
-        <textarea id="notes" cols="30" rows="10" autocomplete="off"></textarea>
-        <div>
-            <label for="date-added">Date Added:</label>
-            <input type="datetime" disabled id="date-added">
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">Todo activity list</h1>
+            <h2 class="header__subtitle">Take notes and nerver forget</h2>
         </div>
-        <div>
-            <label for="date-updated">Date Updated:</label>
-            <input type="datetime" disabled id="date-updated">
-        </div>
-        <div>
-            <label for="checkbox-completed">Completed</label>
-            <input type="checkbox" id="completed">
-        </div>
+    </header>
+    <div class="action">
+        <div class="actions__container">
 
-        <div>
-            <button id="update-button">Update</button>
-            <button id="cancel-button">Cancel</button>
-            <button id="delete-button">Delete</button>
         </div>
+    </div>
+    <div class="action">
+        <div class="actions__container actions__container--spaced">
+            <form id="edit-form" class="form">
+                <label for="name">Todo:</label>
+                <input class="title-input" type="text" id="name" autocomplete="off">
+                <label for="notes">Description:</label>
+                <textarea class="body-input" id="notes" cols="30" rows="10" autocomplete="off"></textarea>
+                <div>
+                    <label for="date-added">Date Added:</label>
+                    <input class="input" type="datetime" disabled id="date-added">
+                </div>
+                <div>
+                    <label for="date-updated">Date Updated:</label>
+                    <input class="input" type="datetime" disabled id="date-updated">
+                </div>
+                <div>
+                    <label for="checkbox-completed">Completed</label>
+                    <input class="input" type="checkbox" id="completed">
+                </div>
+                <br>
 
-    </form>
+                <button class="button" id="update-button">Update</button>
+                <button class="button" id="cancel-button">Cancel</button>
+                <button class="button button--secondary" id="delete-button">Delete</button>
+
+            </form>
+        </div>
+    </div>
+
     <script src="../js/objects.js" type="text/javascript"></script>
     <script src="../js/functions.js" type="text/javascript"></script>
     <script src="../js/edit.js" type="text/javascript"></script>
